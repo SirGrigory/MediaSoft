@@ -1,6 +1,5 @@
 from django.db import models
-
-# Create your models here.
+from django.urls import reverse
 
 
 class City(models.Model):
@@ -13,6 +12,9 @@ class City(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolut_url(self):
+        return reverse('streets', (), self.pk)
 
 
 class Street(models.Model):

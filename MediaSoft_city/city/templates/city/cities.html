@@ -2,7 +2,10 @@
 
 
 {% block content %}
-    {% for city in cities %}
-        <div>{{city.name}}</div>
-    {% endfor %}
+    <div class="mt-4 d-flex align-items-center flex-column">
+        <h2 class="mb-4">Cities</h2>
+        {% for city in cities %}
+            <a href="{{ city.pk }}/street" class="mt-3">{{ city.name }}</a>
+        {% endfor %}
+    </div>
 {% endblock %}
